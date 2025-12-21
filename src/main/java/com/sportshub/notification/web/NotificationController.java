@@ -41,5 +41,11 @@ public class NotificationController {
     public void delete(@PathVariable Long id) {
         notificationService.delete(id);
     }
+
+    @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAll(@RequestParam Long receiverProfileId) {
+        notificationService.deleteAll(receiverProfileId);
+    }
 }
 

@@ -42,5 +42,10 @@ public class NotificationService {
         }
         notificationRepository.deleteById(id);
     }
+
+    @Transactional
+    public void deleteAll(Long receiverProfileId) {
+        notificationRepository.deleteByReceiverProfileId(receiverProfileId);
+    }
 }
 
